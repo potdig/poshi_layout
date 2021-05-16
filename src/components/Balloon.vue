@@ -1,21 +1,23 @@
 <template>
   <div id="balloon">
     <div id="message-area">
-      <p v-html="customMsg" v-if="showCustomMsg"></p>
-      <div id="sns" v-else>
-        <p style="color: #1d9bf0">
-          <svg-icon type="mdi" :path="twitterLogo" />
-          potato_digger
-        </p>
-        <p style="color: #9147ff">
-          <svg-icon type="mdi" :path="twitchLogo" />
-          poshippo
-        </p>
-        <p style="color: #ff0000">
-          <svg-icon type="mdi" :path="youtubeLogo"/>
-          poshiRTA
-        </p>
-      </div>
+      <transition name="fade" mode="out-in">
+        <p v-html="customMsg" v-if="showCustomMsg"></p>
+        <div id="sns" v-else>
+          <p style="color: #1d9bf0">
+            <svg-icon type="mdi" :path="twitterLogo" />
+            potato_digger
+          </p>
+          <p style="color: #9147ff">
+            <svg-icon type="mdi" :path="twitchLogo" />
+            poshippo
+          </p>
+          <p style="color: #ff0000">
+            <svg-icon type="mdi" :path="youtubeLogo" />
+            poshiRTA
+          </p>
+        </div>
+      </transition>
     </div>
     <img src="../assets/balloon_tip.png" />
   </div>
@@ -91,9 +93,27 @@ p {
   display: flex;
   justify-content: center;
   align-items: baseline;
-  gap: 8px;
   font-size: 24px;
 }
+
+.fade-leave-active {
+  animation: fade .5s;
+}
+
+.fade-enter-active {
+  animation: fade .5s reverse;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 100%;
+  }
+
+  100% {
+    opacity: 0%;
+  }
+}
+
 @keyframes flow-up {
   0% {
     transform: translateY(0);
