@@ -1,18 +1,65 @@
 <template>
   <div id="balloon">
     <div id="message-area">
-      <p v-html="msg"></p>
+      <p v-html="customMsg" v-if="showCustomMsg"></p>
+      <div id="sns" v-else>
+        <p style="color: #1d9bf0">
+          <svg-icon type="mdi" :path="twitterLogo" />
+          potato_digger
+        </p>
+        <p style="color: #9147ff">
+          <svg-icon type="mdi" :path="twitchLogo" />
+          poshippo
+        </p>
+        <p style="color: #ff0000">
+          <svg-icon type="mdi" :path="youtubeLogo"/>
+          poshiRTA
+        </p>
+      </div>
     </div>
     <img src="../assets/balloon_tip.png" />
   </div>
 </template>
 
 <script>
+import { DateTime } from 'luxon'
+import SvgIcon from '@jamescoyle/vue-icon'
+import { mdiTwitter, mdiTwitch, mdiYoutube } from '@mdi/js'
+
+const now = () => DateTime.local()
+const end = () => DateTime.local().plus({ seconds: 10 })
+
 export default {
+  components: { SvgIcon },
+  computed: {
+    customMsg() {
+      return '乱数に抗いたい'
+    },
+    twitterLogo() {
+      return mdiTwitter
+    },
+    twitchLogo() {
+      return mdiTwitch
+    },
+    youtubeLogo() {
+      return mdiYoutube
+    }
+  },
   data() {
     return {
-      msg: '乱数に抗いたい'
+      now: now(),
+      end: end(),
+      showCustomMsg: true
     }
+  },
+  mounted() {
+    setInterval(() => {
+      this.now = now()
+      if (this.now > this.end) {
+        this.showCustomMsg = !this.showCustomMsg
+        this.end = end()
+      }
+    }, 100)
   }
 }
 </script>
@@ -40,6 +87,13 @@ p {
   margin: 0;
 }
 
+#sns p {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 24px;
+}
 @keyframes flow-up {
   0% {
     transform: translateY(0);
