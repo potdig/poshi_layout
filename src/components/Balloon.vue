@@ -96,6 +96,12 @@ p {
   font-size: 24px;
 }
 
+svg {
+  position: relative;
+  top: 4px;
+  margin-right: 4px;
+}
+
 .fade-leave-active {
   animation: fade .5s;
 }
