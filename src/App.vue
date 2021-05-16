@@ -1,6 +1,5 @@
 <template>
   <side-bar />
-  <div id="video-area" />
 </template>
 
 <script>
@@ -13,11 +12,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-#video-area {
-  background-color: rgba(0, 0, 0, 0);
-  width: 972px;
-  height: 720px;
-}
-</style>
