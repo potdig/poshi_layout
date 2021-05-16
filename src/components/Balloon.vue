@@ -27,6 +27,7 @@
 import { DateTime } from 'luxon'
 import SvgIcon from '@jamescoyle/vue-icon'
 import { mdiTwitter, mdiTwitch, mdiYoutube } from '@mdi/js'
+import config from '../config.json'
 
 const now = () => DateTime.local()
 const end = () => DateTime.local().plus({ seconds: 10 })
@@ -35,7 +36,7 @@ export default {
   components: { SvgIcon },
   computed: {
     customMsg() {
-      return '乱数に抗いたい'
+      return config['customMsg']
     },
     twitterLogo() {
       return mdiTwitter
