@@ -1,5 +1,6 @@
 <template>
   <div id="container">
+    <timer id="timer" />
     <balloon />
     <poshippo />
   </div>
@@ -8,8 +9,9 @@
 <script>
 import Balloon from './Balloon.vue'
 import Poshippo from './Poshippo.vue'
+import Timer from './Timer.vue'
 export default {
-  components: { Poshippo, Balloon }
+  components: { Poshippo, Balloon, Timer }
 }
 </script>
 
@@ -20,5 +22,9 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+}
+
+#timer {
+  margin-bottom: auto;
 }
 </style>
