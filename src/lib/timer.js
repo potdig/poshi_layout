@@ -6,7 +6,7 @@ export default {
     const liveSplitServerEndpoint = config['liveSplitServerEndpoint']
     const socket = new WebSocket(liveSplitServerEndpoint)
 
-    function callGetCurrentTime() {
+    const callGetCurrentTime = function() {
       socket.send('getcurrenttime')
       setTimeout(callGetCurrentTime, 10)
     }
