@@ -2,7 +2,7 @@
   <div>
     <p id="title">{{ gameTitle }}</p>
     <p id="category">{{ game.category }}</p>
-    <p id="timer">{{ timer.formatted() }}<span>.{{ timer.ms() }}</span></p>
+    <p id="timer" :style="{ color: timer.color() }">{{ timer.formatted() }}<span>.{{ timer.ms() }}</span></p>
     <p id="attempts"><span id="completed">{{ game.completedAttempts }}</span>/<span id="total">{{ game.attempts }}</span></p>
   </div>
 </template>
