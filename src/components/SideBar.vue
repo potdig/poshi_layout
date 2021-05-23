@@ -22,10 +22,10 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  padding: 12px;
 }
 
 #split {
-  margin-top: 1em;
   margin-bottom: auto;
 }
 </style>
