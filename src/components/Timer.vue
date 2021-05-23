@@ -1,33 +1,32 @@
 <template>
   <div>
-    <p>{{ formattedTime.slice(0, -1) }}</p>
+    <p>{{ formattedTime }}<span>.{{ milliseconds }}</span></p>
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
-import { Duration } from 'luxon'
 import timer from '../lib/timer'
 
 timer.init()
 
-const formatForSeconds = 's.SSS'
-const formatForMinutes = 'm:ss.SSS'
-const formatForHours = 'h:mm:ss.SSS'
+const formatForSeconds = 's'
+const formatForMinutes = 'm:ss'
+const formatForHours = 'h:mm:ss'
 export default {
   computed: {
     ...mapGetters(['time']),
     formattedTime() {
-      const duration = Duration
-        .fromMillis(this.time)
-        .shiftTo('hours', 'minutes', 'seconds', 'milliseconds')
-      if (duration.hours) {
-        return duration.toFormat(formatForHours)
-      } else if (duration.minutes) {
-        return duration.toFormat(formatForMinutes)
+      if (this.time.hours) {
+        return this.time.toFormat(formatForHours)
+      } else if (this.time.minutes) {
+        return this.time.toFormat(formatForMinutes)
       } else {
-        return duration.toFormat(formatForSeconds)
+        return this.time.toFormat(formatForSeconds)
       }
+    },
+    milliseconds() {
+      return this.time.milliseconds.toString().padStart(3, '0')
     }
   }
 }

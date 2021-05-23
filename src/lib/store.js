@@ -1,4 +1,5 @@
 import { createStore } from 'vuex'
+import { Duration } from 'luxon'
 
 export const store = createStore({
   state() {
@@ -13,7 +14,8 @@ export const store = createStore({
   },
   getters: {
     time(state) {
-      return state.time
+      return Duration.fromMillis(state.time)
+        .shiftTo('hours', 'minutes', 'seconds', 'milliseconds')
     }
   }
 })
