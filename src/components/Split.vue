@@ -1,6 +1,8 @@
 <template>
   <div>
-    <p>{{ formattedTime }}<span>.{{ milliseconds }}</span></p>
+    <p id="title">{{ gameTitle }}</p>
+    <p id="category">{{ category }}</p>
+    <p id="timer">{{ formattedTime }}<span>.{{ milliseconds }}</span></p>
   </div>
 </template>
 
@@ -12,7 +14,7 @@ const formatForMinutes = 'm:ss'
 const formatForHours = 'h:mm:ss'
 export default {
   computed: {
-    ...mapGetters(['time']),
+    ...mapGetters(['time', 'game']),
     formattedTime() {
       if (this.time.hours) {
         return this.time.toFormat(formatForHours)
@@ -24,6 +26,12 @@ export default {
     },
     milliseconds() {
       return this.time.milliseconds.toString().padStart(3, '0')
+    },
+    gameTitle() {
+      return this.game.name
+    },
+    category() {
+      return this.game.category
     }
   }
 }
@@ -32,10 +40,21 @@ export default {
 <style scoped>
 p {
   font-family: 'RocknRoll One', sans-serif;
+}
+
+#title {
+  font-size: 2.4em;
+}
+
+#category {
+  font-size: 1.7em;
+}
+
+#timer {
   font-size: 4em;
 }
 
-p span {
+#timer span {
   font-size: 0.7em;
 }
 </style>
