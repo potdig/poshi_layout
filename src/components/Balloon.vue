@@ -5,15 +5,15 @@
         <p v-html="customMsg" v-if="showCustomMsg"></p>
         <div id="sns" v-else>
           <p style="color: #1d9bf0">
-            <svg-icon type="mdi" :path="twitterLogo" />
+            <svg-icon type="mdi" :path="twitterLogo" :size="32" />
             potato_digger
           </p>
           <p style="color: #9147ff">
-            <svg-icon type="mdi" :path="twitchLogo" />
+            <svg-icon type="mdi" :path="twitchLogo" :size="32" />
             poshippo
           </p>
           <p style="color: #ff0000">
-            <svg-icon type="mdi" :path="youtubeLogo" />
+            <svg-icon type="mdi" :path="youtubeLogo" :size="32" />
             poshiRTA
           </p>
         </div>
@@ -77,7 +77,7 @@ export default {
 
 #message-area {
   font-family: 'RocknRoll One', sans-serif;
-  font-size: 1.4em;
+  font-size: 2em;
   position: relative;
   max-width: 80%;
   border-radius: 12px;
@@ -94,7 +94,7 @@ p {
   display: flex;
   justify-content: center;
   align-items: baseline;
-  font-size: 24px;
+  font-size: 32px;
 }
 
 svg {

@@ -12,7 +12,7 @@ export default {
 img {
   position: relative;
   max-width: 100%;
-  max-height: 240px;
+  max-height: 320px;
   object-fit: contain;
   animation: flow-up 3s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate;
 }
