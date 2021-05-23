@@ -21,6 +21,12 @@ export default {
 </script>
 
 <style scoped>
+div {
+  background-color: #ffffff8f;
+  border-radius: 16px;
+  padding: 8px;
+}
+
 p {
   font-family: 'RocknRoll One', sans-serif;
 }
