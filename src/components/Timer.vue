@@ -1,11 +1,19 @@
 <template>
   <div>
-    <p>0.00</p>
+    <p>{{ time }}</p>
   </div>
 </template>
 
 <script>
-export default {}
+import { mapGetters } from 'vuex'
+import timer from '../lib/timer'
+
+timer.init()
+export default {
+  computed: {
+    ...mapGetters(['time'])
+  }
+}
 </script>
 
 <style>
