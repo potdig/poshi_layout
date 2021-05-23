@@ -32,5 +32,13 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+p {
+  font-family: 'RocknRoll One', sans-serif;
+  font-size: 4em;
+}
+
+p span {
+  font-size: 0.7em;
+}
 </style>

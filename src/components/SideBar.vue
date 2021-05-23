@@ -25,6 +25,7 @@ export default {
 }
 
 #timer {
+  margin-top: 1em;
   margin-bottom: auto;
 }
 </style>

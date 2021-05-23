@@ -68,8 +68,6 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
-
 #balloon {
   margin-bottom: 10px;
   animation: flow-up 3s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate;
