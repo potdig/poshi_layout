@@ -3,6 +3,7 @@
     <p id="title">{{ gameTitle }}</p>
     <p id="category">{{ category }}</p>
     <p id="timer">{{ formattedTime }}<span>.{{ milliseconds }}</span></p>
+    <p id="attempts"><span id="completed">{{ completedAttempts }}</span>/<span id="total">{{ attempts }}</span></p>
   </div>
 </template>
 
@@ -32,6 +33,12 @@ export default {
     },
     category() {
       return this.game.category
+    },
+    attempts() {
+      return this.game.attempts
+    },
+    completedAttempts() {
+      return this.game.completedAttempts
     }
   }
 }
@@ -56,5 +63,19 @@ p {
 
 #timer span {
   font-size: 0.7em;
+}
+
+#attempts {
+  text-align: right;
+  font-size: 2em;
+}
+
+#attempts #total {
+  font-size: 0.7em;
+}
+
+#attempts #completed {
+  position: relative;
+  top: -0.3em;
 }
 </style>
