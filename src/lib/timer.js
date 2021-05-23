@@ -6,8 +6,9 @@ export default {
     const liveSplitServerEndpoint = config['liveSplitServerEndpoint']
     const socket = new WebSocket(liveSplitServerEndpoint)
 
-    const callGetCurrentTime = function() {
-      socket.send('getcurrenttime')
+    const getCurrentTimeCommand = 'getcurrenttime'
+    const callGetCurrentTime = function () {
+      socket.send(getCurrentTimeCommand)
       setTimeout(callGetCurrentTime, 10)
     }
 
@@ -21,7 +22,13 @@ export default {
 
     socket.addEventListener('message', (event) => {
       const response = JSON.parse(event.data)
-      store.commit('updateTime', response.data)
+      switch (response.name) {
+        case getCurrentTimeCommand:
+          store.commit('updateTime', response.data)
+          break
+        default:
+          console.log(`unknown command: ${response.name}`)
+      }
     })
 
     socket.addEventListener('error', (err) => console.log(err))
