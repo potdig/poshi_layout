@@ -6,9 +6,6 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import timer from '../lib/timer'
-
-timer.init()
 
 const formatForSeconds = 's'
 const formatForMinutes = 'm:ss'
