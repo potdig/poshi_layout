@@ -1,3 +1,4 @@
 {
-  "customMsg": "乱数に抗いたい"
+  "customMsg": "乱数に抗いたい",
+  "liveSplitServerEndpoint": "ws://192.168.99.1:16834/livesplit"
 }
