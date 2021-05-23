@@ -37,7 +37,7 @@ export default {
           store.commit('updateGame', new Game(response.data))
           break
         case getCommandPrefix + currentTimerPhase:
-          console.log(response.data)
+          store.commit('updatePhase', response.data)
           break
         default:
           console.log(`unknown command: ${response.name}`)

@@ -1,11 +1,13 @@
 import { createStore } from 'vuex'
 import { Duration } from 'luxon'
+import Timer from './timer'
 import Game from './game'
 
 export const store = createStore({
   state() {
     return {
       time: 0,
+      phase: 'NotRunning',
       game: new Game()
     }
   },
@@ -15,12 +17,18 @@ export const store = createStore({
     },
     updateGame(state, game) {
       state.game = game
+    },
+    updatePhase(state, phase) {
+      state.phase = phase
     }
   },
   getters: {
-    time(state) {
-      return Duration.fromMillis(state.time)
-        .shiftTo('hours', 'minutes', 'seconds', 'milliseconds')
+    timer(state) {
+      return new Timer(
+        Duration.fromMillis(state.time)
+          .shiftTo('hours', 'minutes', 'seconds', 'milliseconds'),
+        state.phase
+      )
     },
     game(state) {
       return state.game
