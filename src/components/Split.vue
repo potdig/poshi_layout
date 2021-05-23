@@ -1,9 +1,9 @@
 <template>
   <div>
     <p id="title">{{ gameTitle }}</p>
-    <p id="category">{{ category }}</p>
-    <p id="timer">{{ formattedTime }}<span>.{{ milliseconds }}</span></p>
-    <p id="attempts"><span id="completed">{{ completedAttempts }}</span>/<span id="total">{{ attempts }}</span></p>
+    <p id="category">{{ game.category }}</p>
+    <p id="timer">{{ timer.formatted() }}<span>.{{ timer.ms() }}</span></p>
+    <p id="attempts"><span id="completed">{{ game.completedAttempts }}</span>/<span id="total">{{ game.attempts }}</span></p>
   </div>
 </template>
 
@@ -13,23 +13,8 @@ import { mapGetters } from 'vuex'
 export default {
   computed: {
     ...mapGetters(['timer', 'game']),
-    formattedTime() {
-      return this.timer.formatted()
-    },
-    milliseconds() {
-      return this.timer.ms()
-    },
     gameTitle() {
       return this.game.jpTitle ? this.game.jpTitle : this.game.title
-    },
-    category() {
-      return this.game.category
-    },
-    attempts() {
-      return this.game.attempts
-    },
-    completedAttempts() {
-      return this.game.completedAttempts
     }
   }
 }
