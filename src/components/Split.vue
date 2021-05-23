@@ -28,7 +28,7 @@ export default {
       return this.time.milliseconds.toString().padStart(3, '0')
     },
     gameTitle() {
-      return this.game.name
+      return this.game.jpTitle ? this.game.jpTitle : this.game.title
     },
     category() {
       return this.game.category
