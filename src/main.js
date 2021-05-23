@@ -2,9 +2,9 @@ import { createApp } from 'vue'
 import { store } from './lib/store'
 import './index.css'
 import App from './App.vue'
-import timer from './lib/timer'
+import liveSplit from './lib/live-split'
 
-timer.init()
+liveSplit.init()
 
 createApp(App)
   .use(store)
