@@ -31,7 +31,9 @@ export const store = createStore({
       return new Timer(
         Duration.fromMillis(state.time)
           .shiftTo('hours', 'minutes', 'seconds', 'milliseconds'),
-        state.phase
+        state.phase,
+        Duration.fromMillis(state.personalBest)
+          .shiftTo('hours', 'minutes', 'seconds', 'milliseconds')
       )
     },
     game(state) {

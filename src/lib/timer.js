@@ -7,9 +7,10 @@ const running = 'Running'
 const ended = 'Ended'
 
 class Timer {
-  constructor(time, state) {
+  constructor(time, state, pb) {
     this.time = time
     this.state = state
+    this.pb = pb
   }
 
   formatted() {
