@@ -30,17 +30,17 @@ class Timer {
   color() {
     if (this.state == notRunning) {
       return '#3d3d3d7f'
-    } else if (this.state == ended && this.isPB()) {
-      return '#1699ea'
-    } else if (this.state == running && this.time < this.pb) {
-      return '#009a55'
+    } else if (this.state == ended) {
+      return this.isPB() ? '#1699ea' : '#dd3737'
+    } else if (this.state == running) {
+      return this.time <= this.pb ? '#009a55' : '#dd3737'
     } else {
       return '#3d3d3d'
     }
   }
 
   isPB() {
-    return this.time.toMillis() === this.pb.toMillis()
+    return this.time.toMillis() <= this.pb.toMillis()
   }
 }
 
