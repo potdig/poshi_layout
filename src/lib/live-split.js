@@ -6,7 +6,7 @@ const getCommandPrefix = 'get'
 const currentTime = 'currenttime'
 const game = 'Game'
 const currentTimerPhase = 'currenttimerphase'
-const finalTime = 'finaltime'
+const splits = 'splits'
 
 export default {
   init() {
@@ -26,7 +26,7 @@ export default {
       watch(currentTime, 10)
       watch(currentTimerPhase, 10)
       watch(game, 100)
-      watch(finalTime, 100)
+      watch(splits, 100)
     })
 
     socket.addEventListener('message', (event) => {
@@ -41,8 +41,8 @@ export default {
         case getCommandPrefix + currentTimerPhase:
           store.commit('updatePhase', response.data)
           break
-        case getCommandPrefix + finalTime:
-          store.commit('updatePersonalBest', response.data)
+        case getCommandPrefix + splits:
+          store.commit('updateSplits', response.data)
           break
         default:
           console.log(`unknown command: ${response.name}`)

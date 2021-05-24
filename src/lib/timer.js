@@ -30,9 +30,17 @@ class Timer {
   color() {
     if (this.state == notRunning) {
       return '#3d3d3d7f'
+    } else if (this.state == ended && this.isPB()) {
+      return '#1699ea'
+    } else if (this.state == running && this.time < this.pb) {
+      return '#009a55'
     } else {
       return '#3d3d3d'
     }
+  }
+
+  isPB() {
+    return this.time.toMillis() === this.pb.toMillis()
   }
 }
 
