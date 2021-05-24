@@ -7,6 +7,7 @@ export const store = createStore({
   state() {
     return {
       time: 0,
+      personalBest: -1,
       phase: 'NotRunning',
       game: new Game()
     }
@@ -20,6 +21,9 @@ export const store = createStore({
     },
     updatePhase(state, phase) {
       state.phase = phase
+    },
+    updatePersonalBest(state, personalBest) {
+      state.personalBest = personalBest
     }
   },
   getters: {
