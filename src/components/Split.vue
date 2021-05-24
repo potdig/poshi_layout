@@ -3,7 +3,7 @@
     <p id="title">{{ gameTitle }}</p>
     <p id="category">{{ game.category }}</p>
     <p id="timer" :style="{ color: timer.color() }">{{ timer.formatted() }}<span>.{{ timer.ms() }}</span></p>
-    <p id="attempts"><span id="completed">{{ game.completedAttempts }}</span>/<span id="total">{{ game.attempts }}</span></p>
+    <p id="attempts">{{ game.attempts }}</p>
   </div>
 </template>
 
@@ -22,6 +22,7 @@ export default {
 
 <style scoped>
 div {
+  position: relative;
   background-color: #ffffff8f;
   border-radius: 16px;
   padding: 8px;
@@ -48,16 +49,11 @@ p {
 }
 
 #attempts {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
   text-align: right;
-  font-size: 2em;
+  font-size: 1.2em;
 }
 
-#attempts #total {
-  font-size: 0.7em;
-}
-
-#attempts #completed {
-  position: relative;
-  top: -0.3em;
-}
 </style>
