@@ -2,7 +2,8 @@
   <div>
     <p id="title">{{ gameTitle }}</p>
     <p id="category">{{ game.category }}</p>
-    <p id="timer" :style="{ color: timer.color() }">{{ timer.formatted() }}<span>.{{ timer.ms() }}</span></p>
+    <p id="timer" :style="{ color: timer.color() }">{{ timer.formattedTime() }}<span>.{{ timer.ms() }}</span></p>
+    <p id="pb">PB: {{ timer.formattedPb() }}</p>
     <p id="attempts">{{ game.attempts }}</p>
   </div>
 </template>
@@ -56,4 +57,7 @@ p {
   font-size: 1.2em;
 }
 
+#pb {
+  font-size: 1.6em;
+}
 </style>

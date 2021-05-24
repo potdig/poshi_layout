@@ -13,18 +13,16 @@ class Timer {
     this.pb = pb
   }
 
-  formatted() {
-    if (this.time.hours) {
-      return this.time.toFormat(formatForHours)
-    } else if (this.time.minutes) {
-      return this.time.toFormat(formatForMinutes)
-    } else {
-      return this.time.toFormat(formatForSeconds)
-    }
+  formattedTime() {
+    return this._format(this.time)
+  }
+
+  formattedPb() {
+    return `${this._format(this.pb)}.${this._padMillisecondsWithZero(this.pb)}`
   }
 
   ms() {
-    return this.time.milliseconds.toString().padStart(3, '0')
+    return this._padMillisecondsWithZero(this.time)
   }
 
   color() {
@@ -41,6 +39,20 @@ class Timer {
 
   isPB() {
     return this.time.toMillis() <= this.pb.toMillis()
+  }
+
+  _format(time) {
+    if (time.hours) {
+      return time.toFormat(formatForHours)
+    } else if (time.minutes) {
+      return time.toFormat(formatForMinutes)
+    } else {
+      return time.toFormat(formatForSeconds)
+    }
+  }
+
+  _padMillisecondsWithZero(time) {
+    return time.milliseconds.toString().padStart(3, '0')
   }
 }
 
