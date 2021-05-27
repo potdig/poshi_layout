@@ -10,6 +10,7 @@
     "@mdi/js": "^5.9.55",
     "luxon": "^1.27.0",
     "vue": "^3.0.4",
+    "vue-router": "^4.0.8",
     "vuex": "^4.0.0"
   },
   "devDependencies": {
