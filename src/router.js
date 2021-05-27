@@ -3,9 +3,9 @@ import SideBar from './components/SideBar.vue'
 
 const routes = [
   { path: '/', component: SideBar },
-  { path: '/casual', component: SideBar },
-  { path: '/transparent', component: SideBar },
-  { path: '/casual_transparent', component: SideBar }
+  { path: '/casual', component: SideBar, props: { casual: true } },
+  { path: '/transparent', component: SideBar, props: { transparent: true } },
+  { path: '/casual_transparent', component: SideBar, props: { casual: true, transparent: true } }
 ]
 
 export default createRouter({
