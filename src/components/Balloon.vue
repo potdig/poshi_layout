@@ -5,15 +5,15 @@
         <p v-html="customMsg" v-if="showCustomMsg"></p>
         <div id="sns" v-else>
           <p style="color: #1d9bf0">
-            <svg-icon type="mdi" :path="twitterLogo" :size="32" />
+            <svg-icon type="mdi" :path="twitterLogo" :size="logoSize" />
             potato_digger
           </p>
           <p style="color: #9147ff">
-            <svg-icon type="mdi" :path="twitchLogo" :size="32" />
+            <svg-icon type="mdi" :path="twitchLogo" :size="logoSize" />
             poshippo
           </p>
           <p style="color: #ff0000">
-            <svg-icon type="mdi" :path="youtubeLogo" :size="32" />
+            <svg-icon type="mdi" :path="youtubeLogo" :size="logoSize" />
             poshiRTA
           </p>
         </div>
@@ -34,9 +34,15 @@ const end = () => DateTime.local().plus({ seconds: 10 })
 
 export default {
   components: { SvgIcon },
+  props: {
+    small: Boolean
+  },
   computed: {
     customMsg() {
       return config['customMsg']
+    },
+    logoSize() {
+      return this.small ? 20 : 32
     },
     twitterLogo() {
       return mdiTwitter
@@ -92,7 +98,6 @@ p {
   display: flex;
   justify-content: center;
   align-items: baseline;
-  font-size: 32px;
 }
 
 svg {

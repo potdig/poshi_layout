@@ -7,7 +7,8 @@ const routes = [
     component: SideBar,
     props: ({ query }) => ({
         casual: Boolean(query.casual),
-        transparent: Boolean(query.transparent)
+        transparent: Boolean(query.transparent),
+        small: Boolean(query.small)
     })
   }
 ]

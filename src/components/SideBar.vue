@@ -1,7 +1,7 @@
 <template>
-  <div id="container" :class="{ transparent }">
+  <div id="container" :class="{ transparent, small }">
     <split id="split" v-if="!casual" />
-    <balloon />
+    <balloon :small="small" />
     <poshippo />
   </div>
 </template>
@@ -13,7 +13,8 @@ import Split from './Split.vue'
 export default {
   props: { 
     casual: Boolean,
-    transparent: Boolean
+    transparent: Boolean,
+    small: Boolean
   },
   components: { Poshippo, Balloon, Split }
 }
@@ -31,6 +32,10 @@ export default {
 
 #container.transparent {
   background: rgba(0, 0, 0, 0)
+}
+
+#container.small {
+  font-size: 0.625em;
 }
 
 #split {
