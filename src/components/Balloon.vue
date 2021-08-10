@@ -6,7 +6,7 @@
         <div id="sns" v-else>
           <p style="color: #1d9bf0">
             <svg-icon type="mdi" :path="twitterLogo" :size="logoSize" />
-            potato_digger
+            poshippopo
           </p>
           <p style="color: #9147ff">
             <svg-icon type="mdi" :path="twitchLogo" :size="logoSize" />
@@ -116,11 +116,11 @@ svg {
 
 @keyframes fade {
   0% {
-    opacity: 100%;
+    opacity: 1;
   }
 
   100% {
-    opacity: 0%;
+    opacity: 0;
   }
 }
 
