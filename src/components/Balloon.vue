@@ -107,11 +107,11 @@ svg {
 }
 
 .fade-leave-active {
-  animation: fade .5s;
+  animation: fade linear .5s;
 }
 
 .fade-enter-active {
-  animation: fade .5s reverse;
+  animation: fade linear .5s reverse;
 }
 
 @keyframes fade {
