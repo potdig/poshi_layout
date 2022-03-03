@@ -4,8 +4,16 @@
     "jp": "パズルボブル(AC)"
   },
   {
+    "en": "Puzzle Bobble (SNES)",
+    "jp": "パズルボブル(SFC)"
+  },
+  {
     "en": "Puzzle Bobble 2 (Arcade)",
     "jp": "パズルボブル2(AC)"
+  },
+  {
+    "en": "Puzzle Bobble 2X (Arcade)",
+    "jp": "パズルボブル2X(AC)"
   },
   {
     "en": "Bust-A-Move 3 DX",
@@ -30,5 +38,9 @@
   {
     "en": "Magical Drop 2",
     "jp": "マジカルドロップ2"
+  },
+  {
+    "en": "Super Bust-A-Move: All Stars",
+    "jp": "スーパーパズルボブル"
   }
 ]
