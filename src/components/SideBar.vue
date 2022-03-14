@@ -3,6 +3,7 @@
     <split id="split" v-if="!casual" />
     <balloon :small="small" />
     <poshippo />
+    <credits />
   </div>
 </template>
 
@@ -10,13 +11,15 @@
 import Balloon from './Balloon.vue'
 import Poshippo from './Poshippo.vue'
 import Split from './Split.vue'
+import Credits from './Credits.vue'
+
 export default {
   props: { 
     casual: Boolean,
     transparent: Boolean,
     small: Boolean
   },
-  components: { Poshippo, Balloon, Split }
+  components: { Poshippo, Balloon, Split, Credits }
 }
 </script>
 

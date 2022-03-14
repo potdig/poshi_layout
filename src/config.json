@@ -1,4 +1,5 @@
 {
   "customMsg": "乱数に抗いたい",
+  "credits": "",
   "liveSplitServerEndpoint": "ws://192.168.99.1:16834/livesplit"
 }
